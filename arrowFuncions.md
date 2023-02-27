@@ -52,6 +52,12 @@ function isPositive(number) {
 let isPositive = (number) => >=0
 ```
 
+Also for the single parameter you dont have to use the parenthesis for the parameter
+
+```
+let isPositive = number => >=0
+```
+
 ### The typeScript way
 
 ```
@@ -60,4 +66,41 @@ let isPositive = (number:number):number =>  >=0
 
 ## Named function with no parameters
 
+### Traditional way
+
+```
+function randomNumber() {
+    return Math.random
+}
+
+```
+
+### The arrow function way
+
+```
+let randomNumber = () => Math.random
+```
+
+### The typeScript way
+
+```
+let randomNumber = ():number => Math.random
+```
+
 ## Anonymous function
+
+### Traditional way
+
+```
+document.addEventListener('click', function(){
+    console.log('click')
+})
+```
+
+### The arrow function way
+
+```
+document.addEventListener('click', () => console.log('click'))
+```
+
+### The typeScript way
