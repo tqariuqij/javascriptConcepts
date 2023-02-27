@@ -104,3 +104,41 @@ document.addEventListener('click', () => console.log('click'))
 ```
 
 ### The typeScript way
+
+```
+document.addEventListener('click', ():void => console.log('click'))
+```
+
+## Using the this keyword with arrow functions.
+
+One of the big differences between arrow functions and the normal functions is how they interpret the `this` keyword.
+
+let us take an example of a class
+
+```
+class Person {
+    constructor(name) {
+        this.name = name
+    }
+
+    printNameArrow() {
+        setTimeout(() => {
+            console.log('Arrow: ' + this.name)
+        }, 100)
+    }
+
+    printNameFunction(){
+        setTimeout(function(){
+            console.log('Function: ' + this.name)
+        }, 100)
+    }
+}
+
+//let us call this 2 functions
+
+let person = new Person('Bob')
+person.printNameArrow() // will print out on console Arrow: Bob
+person.printNameFunction() // will print out on console Function:
+```
+
+The arrow function `this` is defined from where the function is called while the normal function `this` is defined where the function is declared, in this case inside the class
